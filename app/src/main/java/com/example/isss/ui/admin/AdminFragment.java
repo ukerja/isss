@@ -47,6 +47,7 @@ public class AdminFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Start_Admin.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

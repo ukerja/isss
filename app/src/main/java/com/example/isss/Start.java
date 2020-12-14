@@ -63,6 +63,7 @@ public class Start extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent i = new Intent(Start.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -73,6 +74,7 @@ public class Start extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent i = new Intent(Start.this, Scan.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -83,6 +85,7 @@ public class Start extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent i = new Intent(Start.this, Multimedia.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -93,6 +96,7 @@ public class Start extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent i = new Intent(Start.this, Incident.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -103,6 +107,7 @@ public class Start extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent i = new Intent(Start.this, Test.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -112,7 +117,7 @@ public class Start extends AppCompatActivity implements
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
-        mapboxMap.setStyle(Style.LIGHT, new Style.OnStyleLoaded() {
+        mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
@@ -129,7 +134,7 @@ public class Start extends AppCompatActivity implements
                     .elevation(5)
                     .accuracyAlpha(.6f)
                     .accuracyColor(Color.RED)
-                    .foregroundDrawable(R.drawable.icon_bpkss)
+                    .foregroundDrawable(R.drawable.icon_bpkssss)
                     .build();
 
 // Get an instance of the component

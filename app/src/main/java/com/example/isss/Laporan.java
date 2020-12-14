@@ -11,14 +11,18 @@ import android.view.View;
 import android.widget.Button;
 
 public class Laporan extends AppCompatActivity {
+    
     Context context;
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
     String[] subjects = {
             "1", "2", "3", "4",
-            "5"
+            "5","6","7","8","9",
+            "10","11","12","13","14",
+            "15","16","17","18","19","20"
     };
+    private View itemView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,10 @@ public class Laporan extends AppCompatActivity {
         recyclerView.setLayoutManager(recylerViewLayoutManager);
         recyclerViewAdapter = new AdapterRecyclerView(context, subjects);
         recyclerView.setAdapter(recyclerViewAdapter);
+
+
+     
+
         Button btn = (Button) findViewById(R.id.btn_back);
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -40,5 +48,6 @@ public class Laporan extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 }

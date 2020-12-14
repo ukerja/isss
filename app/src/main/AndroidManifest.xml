@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ISSS">
-        <activity android:name=".Start_Admin"></activity>
+        <activity android:name=".Detail_laporan"></activity>
+        <activity android:name=".Start_Admin" />
         <activity android:name=".Laporan" />
         <activity android:name=".MainActivity_Admin" />
         <activity android:name=".Map" />

@@ -1,6 +1,7 @@
 package com.example.isss;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +27,14 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
+        TextView detail;
 
         ViewHolder(View v) {
 
             super(v);
 
             textView = v.findViewById(R.id.show);
+            detail = v.findViewById(R.id.detail);
         }
     }
     @NonNull
@@ -47,6 +50,16 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         holder.textView.setText(SubjectValues[position]);
+        holder.detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent intent = new Intent(context, Detail_laporan.class);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
 

@@ -1,6 +1,8 @@
 package com.example.isss.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,18 +11,24 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.isss.Login;
 import com.example.isss.R;
+import com.example.isss.SharedPrefmanager;
 import com.example.isss.Start;
 
-import java.util.ArrayList;
+import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 public class HomeFragment extends Fragment {
-
+    private static final String SHARED_PREF_NAME = "simplifiedcodingsharedpref";
     private HomeViewModel homeViewModel;
-    Button btn_map, btn_incident, btn_multimedia, btn_test, btn_start;
+    Button btn_map, btn_incident, btn_multimedia, btn_test,btn_logout, btn_start;
+    private static SharedPrefmanager mInstance;
+    private static Context mCtx;
+
+    private void SharedPrefmanager(Context context) {
+        mCtx = context;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,34 +39,8 @@ public class HomeFragment extends Fragment {
 
 
         btn_start = (Button) root.findViewById(R.id.btn_start);
-//        btn_map = (Button) root.findViewById(R.id.btn_map);
-//        btn_incident = (Button) root.findViewById(R.id.btn_incident);
-//        btn_multimedia = (Button) root.findViewById(R.id.btn_multimedia);
-//        btn_test = (Button) root.findViewById(R.id.btn_test);
 
-//        btn_start.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                boolean checked = btn_start.isChecked();
-//
-//                if (checked) {
-//
-//                    btn_scan.setVisibility(View.VISIBLE);
-//                    btn_incident.setVisibility(View.VISIBLE);
-//                    btn_multimedia.setVisibility(View.VISIBLE);
-//                    btn_test.setVisibility(View.VISIBLE);
-//
-//                } else {
-//
-//                    btn_scan.setVisibility(View.INVISIBLE);
-//                    btn_incident.setVisibility(View.INVISIBLE);
-//                    btn_multimedia.setVisibility(View.INVISIBLE);
-//                    btn_test.setVisibility(View.INVISIBLE);
-//                }
-//
-//            }
-//        });
+
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,41 +50,16 @@ public class HomeFragment extends Fragment {
                 getActivity().finish();
             }
         });
+////calling the logout method
+//        btn_logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getActivity().finish();
+//                SharedPrefmanager.getInstance(getApplicationContext()).logout();
+//            }
+//        });
 
-//        btn_map.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), Map.class);
-//                startActivity(intent);
-//            }
-//
-//        });
-//        btn_incident.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), Incident.class);
-//                startActivity(intent);
-//            }
-//
-//        });
-//
-//        btn_multimedia.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), Multimedia.class);
-//                startActivity(intent);
-//            }
-//
-//        });
-//
-//        btn_test.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), Test.class);
-//                startActivity(intent);
-//            }
-//
-//        });
+
         return root;
     }
 

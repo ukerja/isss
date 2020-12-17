@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_logout:
-                finishAffinity();
-                System.exit(0);
+                SharedPrefmanager.logout();
+                this.finish();
                 return false;
 
             default:

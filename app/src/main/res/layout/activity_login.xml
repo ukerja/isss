@@ -35,6 +35,7 @@
 
     <EditText
         android:id="@+id/editTextUsername"
+        android:inputType="text"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="28dp"
@@ -63,26 +64,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
-    <Button
-        android:id="@+id/btn_login_admin"
-        android:layout_width="20dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
+    <Switch
+        android:id="@+id/active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_login"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Remember Me"
+        android:textSize="17dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/active"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="Masuk"
         android:textColor="@color/bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintHorizontal_bias="0.819"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/active" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

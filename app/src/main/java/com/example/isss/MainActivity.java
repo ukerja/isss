@@ -1,5 +1,7 @@
 package com.example.isss;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_logout:
-                SharedPrefmanager.logout();
+                startActivity(new Intent(MainActivity.this,Login.class));
+                preferences.clearData(this);
                 this.finish();
                 return false;
 

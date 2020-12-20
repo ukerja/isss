@@ -60,8 +60,9 @@ public class MainActivity_Admin extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_logout:
-                finishAffinity();
-                System.exit(0);
+                startActivity(new Intent(MainActivity_Admin.this,Login.class));
+                preferences.clearData(this);
+                this.finish();
                 return false;
 
             default:
